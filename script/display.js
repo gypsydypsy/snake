@@ -37,11 +37,3 @@ retryButton.addEventListener('click', () => {
 backButton.addEventListener('click', () => {
     window.location = '/';
 })
-
-
-
-
-
-/* RESTE A FAIRE */
-
-// score
