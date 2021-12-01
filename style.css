@@ -1,0 +1,207 @@
+
+:root {
+    --darkBlue : #0D152D;
+    --blue :  #12193B;
+    --lightBlue : #49C3EE;
+    --yellow : #F9F47E;
+    --orange : #F0620F;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: black
+}
+
+#container {
+    height: 100vmin;
+    width: 100vmin;
+    background-color: var(--darkBlue);
+}
+
+#intro-screen, #ending-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 20vmin;
+    font-style: italic;
+    text-transform: uppercase;
+}
+
+.neon-text {
+    color: #fff;
+    text-shadow:
+    0 0 8px var(--orange),
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 42px var(--orange),
+      0 0 82px var(--orange);
+}
+
+.flicker-effect {
+    animation-name: flicker;
+    animation-iteration-count: infinite;
+    animation-duration: 3s;
+}
+
+/* Intro screen */
+
+#intro-screen {
+    height: 100%;
+    width: 100%;
+}
+
+#level-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#intro-screen input[type=radio] {
+    position: absolute;
+    display: none;
+}
+
+#intro-screen input[type=radio]+ label {
+    color: white;
+    font-family: 'Fredoka One', cursive;
+    font-size: 5vmin;
+    opacity: 5%;
+    margin-top: 5px;
+}
+
+#intro-screen input[type=radio]+ label:hover {
+    cursor: pointer;
+    opacity: 100%;
+    color: white;
+}
+
+#intro-screen input[type=radio]:checked + label {
+    color: white;
+}
+
+/* Game */
+
+#game-screen {
+    display: none;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#game-grid { 
+    display: grid;
+    grid-template-columns: repeat(21, 1fr);
+    grid-template-rows: repeat(21,1fr);
+}
+
+#game-info {
+    z-index: 10; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+}
+
+#game-info h2 {  
+    font-family: 'Gemunu Libre', sans-serif;   
+    font-size: 4vmin;
+    margin: 0;
+}
+
+#back {
+    display: flex;
+    align-items: center;
+    opacity: 0.3;
+}
+
+#back img {
+    height: 4.5vmin;
+    margin-right: 7px;
+}
+
+#back span {
+    font-family: 'Gemunu Libre', sans-serif;   
+    font-size: 2.5vmin;
+}
+
+#back:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.snake {
+    background-color: white;
+    border:var(--lightBlue) solid 1px;
+    box-shadow: 0 0 5px var(--lightBlue);
+    border-radius: 5px;
+    width: 95%;
+    height: 95%;
+}
+
+.food {
+    background-color: rgba(255,255,255, 0.05);
+    border-radius: 100px;
+    border: solid 7px var(--yellow);
+    box-shadow: 0 0 5px var(--yellow);
+    width: 75%;
+    height: 75%;
+}
+
+/* Ending screen */
+
+#ending-screen {
+    display: none;
+    text-align: center;
+}
+
+#ending-screen button {
+    border: none;
+    background: none;
+    color: white;
+    opacity: 10%;
+    font-size: 5vmin;
+    text-transform: uppercase;
+    font-family: 'Fredoka One', cursive;
+    letter-spacing: 5px;
+}
+
+#ending-screen button:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+/* Keyframes */
+
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        color: #fff;
+        text-shadow:
+            0 0 8px var(--orange),
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 42px var(--orange),
+            0 0 82px var(--orange);
+    }
+    20%, 24%, 55% {       
+      text-shadow: none;
+    }
+  }

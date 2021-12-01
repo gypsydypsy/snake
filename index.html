@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Snake</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="display.js" defer type='module'></script>
+
+    <!-- Typogaphy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="intro-screen">
+            <h1 class='neon-text'>Snake!</h1>
+            <div id="level-container">
+                <input type="radio" name="level" id="easy" value='2'>
+                <label for="easy">Easy</label>
+                <input type="radio" name="level" id="medium" value='5'>
+                <label for="medium">Medium</label>
+                <input type="radio" name="level" id="hard" value='10'>
+                <label for="hard">Hard</label>
+                <input type="radio" name="level" id="insane" value='20'>
+                <label for="insane">Insane</label>
+           </div>
+        </div>
+        <div id="game-screen">
+            <div id="game-info">
+                <div id='back'>
+                    <img src="src/arrow.png" alt="back to menu">
+                    <span>back</span>
+                </div>
+                <h2 id='score'>00</h2>
+            </div>
+            <div id="game-grid">
+            </div>
+        </div>
+        <div id="ending-screen">
+            <h1 class='neon-text flicker-effect'>Game Over</h1>
+            <button id='retry'>Try Again</button>
+        </div>
+    </div>
+</body>
+</html>
