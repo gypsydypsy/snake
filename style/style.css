@@ -189,6 +189,10 @@ h1 {
     cursor: pointer;
 }
 
+.mobile-warning {
+    display: none;
+}
+
 /* Keyframes */
 
 @keyframes flicker {
@@ -205,3 +209,32 @@ h1 {
       text-shadow: none;
     }
   }
+
+  @media screen and (max-width: 585px){
+    .mobile-warning {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: white;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mobile-warning img {
+        width: 60%;
+    }
+
+    
+    .mobile-warning span {
+        text-align: center;
+        max-width: 70%;   
+        font-family: 'Fredoka One', cursive;
+    }
+    
+}
